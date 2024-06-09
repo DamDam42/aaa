@@ -2,6 +2,8 @@ package com.heroku.java;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -31,7 +33,27 @@ public class GettingStartedApplication {
     }
     
 
-   
+    @GetMapping("/database")
+    String database(Map<String, Object> model) {
+        try (Connection connection = dataSource.getConnection()) {
+            final var statement = connection.createStatement();
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
+            statement.executeUpdate("INSERT INTO ticks VALUES (now())");
+
+            final var resultSet = statement.executeQuery("SELECT tick FROM ticks");
+            final var output = new ArrayList<>();
+            while (resultSet.next()) {
+                output.add("Read from DB: " + resultSet.getTimestamp("tick"));
+            }
+
+            model.put("records", output);
+            return "database";
+
+        } catch (Throwable t) {
+            model.put("message", t.getMessage());
+            return "error";
+        }
+    }
 
     @PostMapping("/customerRegister")
     public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
