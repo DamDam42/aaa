@@ -6,7 +6,7 @@
     <title>Customer Registration</title>
 </head>
 <body>
-    <form method="post" th:action="@{/customerRegister}" th:object="${customer}">
+    <form method="post" th:action="@{/customerRegister}" ModelAttribute= "customerRegister" th:object="${customerRegister}">
         <input type="text" name="custname" placeholder="Name" required>
         <input type="password" name="custpassword" placeholder="Password" required>
         <input type="email" name="custemail" placeholder="Email" required>
