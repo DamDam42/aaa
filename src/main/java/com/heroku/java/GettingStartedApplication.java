@@ -22,7 +22,7 @@ public class GettingStartedApplication {
         this.dataSource = dataSource;
     }
 
-    @GetMapping("/customerRegister")
+    @GetMapping("/index2")
     public String customerRegister() {
         return "account/customerRegister";
     }
