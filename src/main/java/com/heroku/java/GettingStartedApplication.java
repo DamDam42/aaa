@@ -23,9 +23,10 @@ public class GettingStartedApplication {
     }
 
     @GetMapping("/customerRegister")
-    public String index() {
+    public String customerRegister() {
         return "account/customerRegister";
     }
+    
 
     @GetMapping("/database")
     String database(Map<String, Object> model) {
