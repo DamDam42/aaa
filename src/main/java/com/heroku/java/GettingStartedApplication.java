@@ -35,7 +35,7 @@ private final DataSource dataSource;
 @GetMapping("/addticket")
 public String viewticket() {
  
-return "test/viewticket";
+return "/viewticket";
 }
     
 
