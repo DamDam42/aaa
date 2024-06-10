@@ -17,9 +17,6 @@ import com.heroku.java.model.customer;
 @Controller
 public class CustomerController {
 
-    @Autowired
-    private DataSource dataSource;
-
    
     @GetMapping("/customerRegister")
     public String showRegistrationForm(Model model) {
