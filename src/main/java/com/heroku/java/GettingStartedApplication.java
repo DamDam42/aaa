@@ -8,13 +8,14 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.heroku.java.controller.CustomerController;
 
 
 @Controller
+@SpringBootApplication
 public class GettingStartedApplication {
     private final DataSource dataSource;
 
@@ -22,6 +23,10 @@ public class GettingStartedApplication {
     public GettingStartedApplication(DataSource dataSource) {
         this.dataSource = dataSource;
     }
+    @GetMapping("/")
+        public String index(){
+            return "index";
+        }
 
     @GetMapping("/customerRegister")
     public String customerRegister() {
@@ -52,7 +57,7 @@ public class GettingStartedApplication {
     }
 
         public static void main(String[] args) {
-        SpringApplication.run(CustomerController.class, args);
+        SpringApplication.run(GettingStartedApplication.class, args);
     }
 }
 
