@@ -40,6 +40,11 @@ public class CustomerController {
             return "error";
         }
     }
+    @GetMapping("/customerRegister")
+    public String showRegistrationForm(Model model) {
+        model.addAttribute("customerRegister", new Customer());
+        return "customerRegister";
+    }
 
     
     @PostMapping("/customerRegister")
