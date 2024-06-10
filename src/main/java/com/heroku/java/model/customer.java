@@ -62,7 +62,7 @@ public class customer{
 
     @Override
     public String toString(){
-        return "Name" + custname + "Password" + custpassword + "Email" + custemail + "phone number " + custphonenum + "address " + custaddress ;
+        return "Name" + custname + "Password" + custpassword + "Email" + custemail + "phone number " + custphonenum + "address " + custaddress; 
     }
 
 }
