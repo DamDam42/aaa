@@ -33,8 +33,7 @@ private final DataSource dataSource;
 }
 
 @GetMapping("/customerRegister")
-public String customerRegister(Model model) {
-    model.addAttribute("customerRegister", new customer());
+public String customerRegister() {
     return "account/customerRegister";
 }
     
