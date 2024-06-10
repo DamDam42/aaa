@@ -30,6 +30,11 @@ public class GettingStartedApplication {
             return "index";
         }
 
+        @GetMapping("/addticket")
+        public String viewticket() {
+         
+        return "test/viewticket";
+    }
     
     
 
