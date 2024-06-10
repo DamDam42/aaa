@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @SpringBootApplication
 public class GettingStartedApplication {
-private final Datasource dataSource;
+private final DataSource dataSource;
 
     @Autowired
-    public class GettingStartedApplication(Datasource dataSource){
+    public class GettingStartedApplication(DataSource dataSource){
     this.dataSource = dataSource;
 }
 
