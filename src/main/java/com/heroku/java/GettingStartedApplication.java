@@ -10,32 +10,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.heroku.java.model.customer;
 
 
 
 @Controller
 @SpringBootApplication
 public class GettingStartedApplication {
-    private final DataSource dataSource;
+private final DataSource dataSource;
 
     @Autowired
-    public GettingStartedApplication(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    public GettingStartedApplication(DataSource dataSource){
+    this.dataSource = dataSource;
+}
 
-    
-    @GetMapping("/")
-        public String index(){
-            return "index";
-        }
+@GetMapping("/")
+    public String index(){
+    return "index";
+}
 
-        @GetMapping("/addticket")
-        public String viewticket() {
-         
-        return "test/viewticket";
-    }
-    
+@GetMapping("/addticket")
+public String viewticket() {
+ 
+return "test/viewticket";
+}
     
 
     @GetMapping("/database")
@@ -46,22 +47,22 @@ public class GettingStartedApplication {
             statement.executeUpdate("INSERT INTO ticks VALUES (now())");
 
             final var resultSet = statement.executeQuery("SELECT tick FROM ticks");
-            final var output = new ArrayList<>();
+            final var output = new ArrayList<String>();
             while (resultSet.next()) {
                 output.add("Read from DB: " + resultSet.getTimestamp("tick"));
             }
 
             model.put("records", output);
             return "database";
-
         } catch (Throwable t) {
             model.put("message", t.getMessage());
             return "error";
         }
     }
-
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(GettingStartedApplication.class, args);
-    }
+    } 
 }
+
+
 
