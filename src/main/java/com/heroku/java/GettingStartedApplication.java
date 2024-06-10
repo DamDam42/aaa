@@ -33,9 +33,9 @@ private final DataSource dataSource;
 }
 
 @GetMapping("/customerRegister")
-public String showRegistrationForm(Model model) {
+public String customerRegister(Model model) {
     model.addAttribute("customerRegister", new customer());
-    return "customerRegister";
+    return "account/customerRegister";
 }
     
      @GetMapping("/database")
