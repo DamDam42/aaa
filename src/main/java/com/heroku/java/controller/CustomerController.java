@@ -17,7 +17,7 @@ import com.heroku.java.model.customer;
 @Controller
 public class CustomerController {
 
-    Autowired
+    @Autowired
     private DataSource dataSource;
 
    
