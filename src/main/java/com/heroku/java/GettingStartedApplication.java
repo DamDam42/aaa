@@ -20,7 +20,7 @@ public class GettingStartedApplication {
 private final DataSource dataSource;
 
     @Autowired
-    public class GettingStartedApplication(DataSource dataSource){
+    public GettingStartedApplication(DataSource dataSource){
     this.dataSource = dataSource;
 }
 
