@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket List</title>
+</head>
+<body>
+    <form 
+    method="post"
+    th:action="@{/addTicket}"
+    modelAttribute="addTicket"
+    th:object="(${ticket})"
+    enctype="multipart/form-data">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-md card card-body py-5">
+            <div class="row m-4">
+                <div class="col-2 text-center">
+                    <a th:href="@{/staffRoomList}">
+                        <div class="bi bi-arrow-left-circle" style="font-size: 50px;"></div>
+                    </a>
+                </div>
+                <div class="col-md-8 text-center pt-3">
+                    <div class="">
+
+                        <h1>Add Ticket</h1>
+                    </div>
+                </div>
+                <div class="col-2">
+
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-1"></div>
+                <div class="col pt-3">
+                    <span>
+                        <h6>Ticket Type</h6>
+                    </span>
+                </div>
+                <div class="col-8">
+                    <input type="text" name="tickettype"  class="form-control" placeholder="Ticket Type" required>
+                </div>
+            </div>
+
+            <div class="row m-3">
+                <div class="col-1"></div>
+                <div class="col pt-3">
+                    <span>
+                        <h6>Ticket Price</h6>
+                    </span>
+                </div>
+            <div class="col-8">
+                <input type="number" name="ticketprice"  class="form-control" placeholder="Ticket Price" required>
+            </div>
+        </div>
+                
+            
+            </div>
+            <div class="row m-5">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-dark btn-lg">Add</button>
+                    <!-- <a th:href="@{/staffRoomList}" class="btn btn-dark btn-lg"
+                        style="border-radius: 3px 3px 3px 3px; height: auto; width:150px" onclick="success()">Add</a>
+
+                    <script>
+                        function success() {
+                            alert("Successfully Added");
+                        }
+                    </script> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <!-- <div class="row card card-body align-items-center"> -->
+</form>
+</body>
+</html>
