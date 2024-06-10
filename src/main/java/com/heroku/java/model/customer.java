@@ -60,6 +60,9 @@ public class customer{
         this.custpassword=custpassword;
     }
 
-
+    @Override
+    public String toString(){
+        return "Name" + custname + "Password" + custpassword + "Email" + custemail + "phone number " + custphonenum + "address " + custaddress ;
+    }
 
 }

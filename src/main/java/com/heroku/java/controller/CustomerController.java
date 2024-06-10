@@ -30,7 +30,7 @@ public class CustomerController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("customerRegister", new customer());
-        return "account/customerRegister";
+        return "/customerRegister";
     }
     @PostMapping("/customerRegister")
     public String customerRegister(@ModelAttribute customer customer,Model model) {
