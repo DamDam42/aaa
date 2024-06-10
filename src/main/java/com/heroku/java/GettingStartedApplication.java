@@ -30,10 +30,7 @@ public class GettingStartedApplication {
             return "index";
         }
 
-    @GetMapping("/customerRegister")
-    public String customerRegister() {
-        return "account/customerRegister";
-    }
+    
     
 
     @GetMapping("/database")
