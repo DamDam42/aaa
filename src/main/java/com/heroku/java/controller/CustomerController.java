@@ -27,7 +27,7 @@ public class CustomerController {
     public CustomerController(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-    @GetMapping("/customerRegister")
+    @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("customerRegister", new customer());
         return "account/customerRegister";
