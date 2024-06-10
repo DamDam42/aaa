@@ -7,11 +7,11 @@
 </head>
 <body>
     <form method="post" th:action="@{/customerRegister}" ModelAttribute= "customerRegister" th:object="${customerRegister}">
-        <input type="text" name="custname" placeholder="Name" required>
-        <input type="password" name="custpassword" placeholder="Password" required>
-        <input type="email" name="custemail" placeholder="Email" required>
-        <input type="text" name="custphonenum" placeholder="Phone Number" required>
-        <input type="text" name="custaddress" placeholder="Address" required>
+        <input type="text" th:field=${custname} placeholder="Name" required>
+        <input type="password" th:field=${custpassword} placeholder="Password" required>
+        <input type="email" th:field=${custemail} placeholder="Email" required>
+        <input type="text" th:field=${custphonenum} placeholder="Phone Number" required>
+        <input type="text" th:field=${custaddress} placeholder="Address" required>
         <button type="submit">Register</button>
     </form>
 </body>
