@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,11 +24,13 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     @GetMapping("/customerRegister")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("customerRegister", new customer());
         return "account/customerRegister";
     }
     @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
+    public String customerRegister(@ModelAttribute customer customer,Model model) {
+        model.addAttribute("customerRegister", new customer());
         try (Connection connection = dataSource.getConnection()){
             String sql = "INSERT INTO public.customer(custname, custpassword, custemail, custphonenum, custaddress) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
