@@ -48,8 +48,11 @@ private final DataSource dataSource;
             model.put("message", t.getMessage());
             return "error";
         }
+    }
     public static void main(String[] args) {
         SpringApplication.run(GettingStartedApplication.class, args);
-    }
+    } 
 }
+
+
 
