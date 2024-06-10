@@ -23,6 +23,8 @@ public class GettingStartedApplication {
     public GettingStartedApplication(DataSource dataSource) {
         this.dataSource = dataSource;
     }
+
+    
     @GetMapping("/")
         public String index(){
             return "index";
