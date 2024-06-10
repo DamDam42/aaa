@@ -32,10 +32,7 @@ private final DataSource dataSource;
     return "index";
 }
 
-@GetMapping("/addticket")
-public String viewticket() {
-return "/viewticket";
-}
+
     
 
     @GetMapping("/database")
