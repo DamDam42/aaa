@@ -5,7 +5,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -20,30 +19,27 @@ public class TicketController {
         this.dataSource = dataSource;
     }
 
-@GetMapping("/addticket")
-public String viewticket() {
-return "/viewticket";
-}
+   
 
    @PostMapping("/addTicket")
-    public String staffAddRoom(@ModelAttribute("ticket")ticket ticket ){
+    public String addTicket(@ModelAttribute("ticket")ticket ticket ){
        
 
         try {
-            Connection connection = dataSource.getConnection();
-            String sql = "INSERT INTO public.ticket(tickettype,ticketprice) VALUES(?,?)";
-            final var statement = connection.prepareStatement(sql);
-
-            String tickettype= ticket.getTicketType();
-            double ticketprice = ticket.getTicketPrice();
-            
-            
-            statement.setString(1, tickettype);
-            statement.setDouble(2, ticketprice);
-           
-            statement.executeUpdate();
-            
-            connection.close();
+            try (Connection connection = dataSource.getConnection()) {
+                String sql = "INSERT INTO public.ticket(tickettype,ticketprice) VALUES(?,?)";
+                final var statement = connection.prepareStatement(sql);
+                
+                String tickettype= ticket.getTicketType();
+                double ticketprice = ticket.getTicketPrice();
+                
+                
+                statement.setString(1, tickettype);
+                statement.setDouble(2, ticketprice);
+                
+                statement.executeUpdate();
+                connection.close();
+            }
                 
                 } catch (Exception e) {
                     e.printStackTrace();
