@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.heroku.java.model.ticket;
 
 @Controller
-public class TicketController {
+public class TicketControlleR {
     private final DataSource dataSource;
 
     @Autowired
