@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.0</version>
+        <version>3.2.5</version>
         <relativePath/>
     </parent>
 
@@ -41,6 +41,7 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+<<<<<<< HEAD
         <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
@@ -52,6 +53,13 @@
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
 
+=======
+             <dependency>
+          <groupId>org.jscience</groupId>
+            <artifactId>jscience</artifactId>
+          <version>4.3.1</version>
+     </dependency>
+>>>>>>> 6a0745712e49162799815fcdaf462e5d3188b52d
     </dependencies>
 
     <build>
