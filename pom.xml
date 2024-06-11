@@ -42,13 +42,12 @@
             <artifactId>postgresql</artifactId>
         </dependency>
 
-=======
-             <dependency>
-          <groupId>org.jscience</groupId>
-            <artifactId>jscience</artifactId>
-          <version>4.3.1</version>
-     </dependency>
->>>>>>> 6a0745712e49162799815fcdaf462e5d3188b52d
+<dependency>
+<groupId>org.jscience</groupId>
+<artifactId>jscience</artifactId>
+<version>4.3.1</version>
+</dependency>
+
     </dependencies>
 
     <build>
