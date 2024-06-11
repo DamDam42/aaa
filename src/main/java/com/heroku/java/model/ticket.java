@@ -10,15 +10,15 @@ public class ticket {
     }
 
     public String getTicketType() {
-        return this.tickettype;
+        return tickettype;
     }
 
-    public void setTicketType(String ticket) {
-        this.tickettype = ticket;
+    public void setTicketType(String tickettype) {
+        this.tickettype = tickettype;
     }
 
     public double getTicketPrice() {
-        return this.ticketprice;
+        return ticketprice;
     }
 
     public void setTicketPrice(double ticketprice) {
@@ -26,7 +26,7 @@ public class ticket {
     }
 
     public int getTicketId() {
-        return this.ticketid;
+        return ticketid;
     }
 
     public void setTicketType(int ticketid) {
